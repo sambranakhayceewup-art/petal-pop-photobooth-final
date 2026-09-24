@@ -1,4 +1,4 @@
-// Python data-structures integration. Photos remain on the device; metadata is synchronized.
+
 let pythonSession=null, pythonPhotoIds=[], syncingEdit=false, editDebounce=null;
 async function dsCall(endpoint,body){
   const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
