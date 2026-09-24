@@ -1,4 +1,4 @@
-"""PetalPop: Flask frontend + functional Python data structures backend."""
+
 import base64
 import binascii
 from io import BytesIO
@@ -123,7 +123,7 @@ def print_ready():
             sessions.get(session_id)
         except KeyError:
             return jsonify(error='Session expired. Restart the photobooth.'), 404
-    # FIFO queue is used for actual print conversion, not merely a demonstration.
+   
     print_queue.enqueue(data.get('image', ''))
     try:
         output = print_queue.process_next(make_print_png)
